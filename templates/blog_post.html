@@ -1,0 +1,16 @@
+{% extends "index.html" %}
+
+{% block content %}
+<section id="blog-post" class="section">
+    <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-4 text-center">{{ post.title }}</h2>
+        <p class="text-gray-400 mb-8 text-center">{{ post.date }}</p>
+        <div class="bg-gray-800 p-6 rounded-lg">
+            <p class="mb-4">{{ post.content }}</p>
+        </div>
+        <div class="mt-8 text-center">
+            <a href="{{ url_for('blog') }}" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Back to Blog</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

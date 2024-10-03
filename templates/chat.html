@@ -1,0 +1,62 @@
+{% extends "index.html" %}
+
+{% block content %}
+<section id="chat" class="section pt-20">
+    <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-8 text-center">Real-Time Chat</h2>
+        <div class="bg-gray-800 p-6 rounded-lg">
+            <div id="chat-messages" class="h-64 overflow-y-auto mb-4 p-4 bg-gray-700 rounded"></div>
+            <form id="chat-form" class="flex">
+                <input type="text" id="username" placeholder="Your name" class="flex-grow px-3 py-2 rounded-l bg-gray-700 text-white" required>
+                <input type="text" id="message" placeholder="Type your message" class="flex-grow px-3 py-2 bg-gray-700 text-white" required>
+                <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-r">Send</button>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+<script>
+    const socket = io();
+    const chatForm = document.getElementById('chat-form');
+    const chatMessages = document.getElementById('chat-messages');
+    const username = document.getElementById('username');
+    const messageInput = document.getElementById('message');
+
+    const room = 'general';  // You can implement multiple rooms later if needed
+
+    chatForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (messageInput.value) {
+            socket.emit('message', {
+                room: room,
+                username: username.value,
+                message: messageInput.value
+            });
+            messageInput.value = '';
+        }
+    });
+
+    socket.on('connect', () => {
+        socket.emit('join', {username: username.value, room: room});
+    });
+
+    socket.on('status', (data) => {
+        const statusMessage = document.createElement('div');
+        statusMessage.classList.add('text-gray-400', 'text-sm', 'my-2');
+        statusMessage.textContent = data.msg;
+        chatMessages.appendChild(statusMessage);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    });
+
+    socket.on('message', (data) => {
+        const messageElement = document.createElement('div');
+        messageElement.classList.add('my-2');
+        messageElement.innerHTML = `<strong>${data.username}:</strong> ${data.message}`;
+        chatMessages.appendChild(messageElement);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,92 @@
+ * Serving Flask app 'app'
+ * Debug mode: on
+INFO:werkzeug:WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.31.196.124:5000
+INFO:werkzeug:Press CTRL+C to quit
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 262-372-641
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.github.com:443
+DEBUG:urllib3.connectionpool:https://api.github.com:443 "GET /repos/d3fcom/generate_thumbnails_python HTTP/11" 200 1284
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.github.com:443
+DEBUG:urllib3.connectionpool:https://api.github.com:443 "GET /repos/d3fcom/generate_thumbnails_python/readme HTTP/11" 200 699
+INFO:werkzeug:172.31.196.124 - - [02/Oct/2024 23:17:01] "GET /project/generate_thumbnails_python HTTP/1.1" 200 -
+INFO:werkzeug:172.31.196.124 - - [02/Oct/2024 23:17:02] "GET /static/css/styles.css HTTP/1.1" 304 -
+INFO:werkzeug:172.31.196.124 - - [02/Oct/2024 23:17:02] "GET /static/js/main.js HTTP/1.1" 304 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.github.com:443
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.github.com:443
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.github.com:443
+DEBUG:urllib3.connectionpool:https://api.github.com:443 "GET /users/d3fcom HTTP/11" 200 460
+INFO:werkzeug:172.31.196.124 - - [02/Oct/2024 23:17:03] "GET /github_stats HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:https://api.github.com:443 "GET /users/d3fcom/events/public?per_page=100&page=1&since=2023-10-03T23%3A17%3A03.311422 HTTP/11" 200 None
+INFO:werkzeug:172.31.196.124 - - [02/Oct/2024 23:17:03] "GET /github_activity HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:https://api.github.com:443 "GET /users/d3fcom/repos HTTP/11" 200 None
+INFO:werkzeug:172.31.196.124 - - [02/Oct/2024 23:17:03] "GET /github_projects HTTP/1.1" 200 -
+INFO:werkzeug:172.31.196.124 - - [02/Oct/2024 23:17:09] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:172.31.196.124 - - [02/Oct/2024 23:17:09] "GET /static/css/styles.css HTTP/1.1" 200 -
+INFO:werkzeug:172.31.196.124 - - [02/Oct/2024 23:17:09] "GET /static/images/CompressJPEG.online_512x512-image%20(7).jpg HTTP/1.1" 200 -
+INFO:werkzeug:172.31.196.124 - - [02/Oct/2024 23:17:09] "GET /static/images/hoodstarclub.png HTTP/1.1" 200 -
+INFO:werkzeug:172.31.196.124 - - [02/Oct/2024 23:17:09] "GET /static/images/hoodstarshoes.png HTTP/1.1" 200 -
+INFO:werkzeug:172.31.196.124 - - [02/Oct/2024 23:17:09] "GET /static/images/wokies.png HTTP/1.1" 200 -
+INFO:werkzeug:172.31.196.124 - - [02/Oct/2024 23:17:09] "GET /static/js/main.js HTTP/1.1" 200 -
+INFO:werkzeug:172.31.196.124 - - [02/Oct/2024 23:17:09] "GET /static/images/Screenshot%202024-10-01%20052342.png HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.github.com:443
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.github.com:443
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.github.com:443
+DEBUG:urllib3.connectionpool:https://api.github.com:443 "GET /users/d3fcom HTTP/11" 200 460
+INFO:werkzeug:172.31.196.124 - - [02/Oct/2024 23:17:09] "GET /github_stats HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:https://api.github.com:443 "GET /users/d3fcom/repos HTTP/11" 200 3410
+INFO:werkzeug:172.31.196.124 - - [02/Oct/2024 23:17:09] "GET /github_projects HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:https://api.github.com:443 "GET /users/d3fcom/events/public?per_page=100&page=1&since=2023-10-03T23%3A17%3A09.764260 HTTP/11" 200 None
+INFO:werkzeug:172.31.196.124 - - [02/Oct/2024 23:17:09] "GET /github_activity HTTP/1.1" 200 -
+INFO:werkzeug:172.31.196.124 - - [02/Oct/2024 23:17:24] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:172.31.196.124 - - [02/Oct/2024 23:17:24] "GET /static/css/styles.css HTTP/1.1" 304 -
+INFO:werkzeug:172.31.196.124 - - [02/Oct/2024 23:17:24] "GET /static/images/CompressJPEG.online_512x512-image%20(7).jpg HTTP/1.1" 304 -
+INFO:werkzeug:172.31.196.124 - - [02/Oct/2024 23:17:24] "GET /static/images/Screenshot%202024-10-01%20052342.png HTTP/1.1" 304 -
+INFO:werkzeug:172.31.196.124 - - [02/Oct/2024 23:17:24] "GET /static/images/hoodstarclub.png HTTP/1.1" 304 -
+INFO:werkzeug:172.31.196.124 - - [02/Oct/2024 23:17:26] "GET /static/images/hoodstarshoes.png HTTP/1.1" 304 -
+INFO:werkzeug:172.31.196.124 - - [02/Oct/2024 23:17:26] "GET /static/images/wokies.png HTTP/1.1" 304 -
+INFO:werkzeug:172.31.196.124 - - [02/Oct/2024 23:17:26] "GET /static/js/main.js HTTP/1.1" 304 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.github.com:443
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.github.com:443
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.github.com:443
+DEBUG:urllib3.connectionpool:https://api.github.com:443 "GET /users/d3fcom HTTP/11" 200 460
+DEBUG:urllib3.connectionpool:https://api.github.com:443 "GET /users/d3fcom/events/public?per_page=100&page=1&since=2023-10-03T23%3A17%3A28.235225 HTTP/11" 200 None
+INFO:werkzeug:172.31.196.124 - - [02/Oct/2024 23:17:28] "GET /github_stats HTTP/1.1" 200 -
+INFO:werkzeug:172.31.196.124 - - [02/Oct/2024 23:17:28] "GET /github_activity HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:https://api.github.com:443 "GET /users/d3fcom/repos HTTP/11" 200 None
+INFO:werkzeug:172.31.196.124 - - [02/Oct/2024 23:17:28] "GET /github_projects HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.github.com:443
+DEBUG:urllib3.connectionpool:https://api.github.com:443 "GET /repos/d3fcom/create-eth-addresses HTTP/11" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.github.com:443
+DEBUG:urllib3.connectionpool:https://api.github.com:443 "GET /repos/d3fcom/create-eth-addresses/readme HTTP/11" 200 601
+INFO:werkzeug:172.31.196.124 - - [02/Oct/2024 23:17:43] "GET /project/create-eth-addresses HTTP/1.1" 200 -
+INFO:werkzeug:172.31.196.124 - - [02/Oct/2024 23:17:43] "GET /static/css/styles.css HTTP/1.1" 304 -
+INFO:werkzeug:172.31.196.124 - - [02/Oct/2024 23:17:43] "GET /static/js/main.js HTTP/1.1" 304 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.github.com:443
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.github.com:443
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.github.com:443
+DEBUG:urllib3.connectionpool:https://api.github.com:443 "GET /users/d3fcom HTTP/11" 200 460
+INFO:werkzeug:172.31.196.124 - - [02/Oct/2024 23:17:45] "GET /github_stats HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:https://api.github.com:443 "GET /users/d3fcom/repos HTTP/11" 200 3410
+INFO:werkzeug:172.31.196.124 - - [02/Oct/2024 23:17:45] "GET /github_projects HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:https://api.github.com:443 "GET /users/d3fcom/events/public?per_page=100&page=1&since=2023-10-03T23%3A17%3A44.969130 HTTP/11" 200 None
+INFO:werkzeug:172.31.196.124 - - [02/Oct/2024 23:17:45] "GET /github_activity HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.github.com:443
+DEBUG:urllib3.connectionpool:https://api.github.com:443 "GET /repos/d3fcom/generate_thumbnails_python HTTP/11" 200 1284
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.github.com:443
+DEBUG:urllib3.connectionpool:https://api.github.com:443 "GET /repos/d3fcom/generate_thumbnails_python/readme HTTP/11" 200 699
+INFO:werkzeug:172.31.196.124 - - [02/Oct/2024 23:17:58] "GET /project/generate_thumbnails_python HTTP/1.1" 200 -
+INFO:werkzeug:172.31.196.124 - - [02/Oct/2024 23:17:58] "GET /static/css/styles.css HTTP/1.1" 304 -
+INFO:werkzeug:172.31.196.124 - - [02/Oct/2024 23:17:58] "GET /static/js/main.js HTTP/1.1" 304 -
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.github.com:443
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.github.com:443
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.github.com:443
+DEBUG:urllib3.connectionpool:https://api.github.com:443 "GET /users/d3fcom/repos HTTP/11" 200 3410
+INFO:werkzeug:172.31.196.124 - - [02/Oct/2024 23:18:00] "GET /github_projects HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:https://api.github.com:443 "GET /users/d3fcom HTTP/11" 200 460
+INFO:werkzeug:172.31.196.124 - - [02/Oct/2024 23:18:00] "GET /github_stats HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:https://api.github.com:443 "GET /users/d3fcom/events/public?per_page=100&page=1&since=2023-10-03T23%3A18%3A00.356086 HTTP/11" 200 None
+INFO:werkzeug:172.31.196.124 - - [02/Oct/2024 23:18:00] "GET /github_activity HTTP/1.1" 200 -

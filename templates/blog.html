@@ -1,0 +1,77 @@
+{% extends "index.html" %}
+
+{% block content %}
+<nav class="fixed top-0 left-0 right-0 bg-gray-900 bg-opacity-90 z-50">
+    <div class="container mx-auto px-6 py-3">
+        <div class="flex items-center justify-between">
+            <a href="{{ url_for('index') }}" class="text-xl font-semibold text-white">Luis Alberto Pineda Morales</a>
+            <div class="hidden md:flex space-x-4">
+                <a href="{{ url_for('index') }}#about" class="text-white hover:text-blue-300">About</a>
+                <a href="{{ url_for('index') }}#skills" class="text-white hover:text-blue-300">Skills</a>
+                <a href="{{ url_for('index') }}#github" class="text-white hover:text-blue-300">GitHub</a>
+                <a href="{{ url_for('index') }}#projects" class="text-white hover:text-blue-300">Projects</a>
+                <a href="{{ url_for('index') }}#nft" class="text-white hover:text-blue-300">Art</a>
+                <a href="{{ url_for('blog') }}" class="text-white hover:text-blue-300">Blog</a>
+                <a href="{{ url_for('index') }}#contact" class="text-white hover:text-blue-300">Contact</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<section id="blog" class="section pt-20">
+    <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-8 text-center">Technical Blog</h2>
+        <div class="flex flex-wrap -mx-4">
+            <div class="w-full lg:w-2/3 px-4">
+                <div class="mb-8">
+                    <form action="{{ url_for('blog') }}" method="GET" class="flex">
+                        <input type="text" name="search" placeholder="Search blog posts" value="{{ search_query }}" class="flex-grow px-3 py-2 rounded-l bg-gray-700 text-white">
+                        <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-r">Search</button>
+                    </form>
+                </div>
+                <div class="grid grid-cols-1 gap-6">
+                    {% for post in posts %}
+                    <div class="bg-gray-800 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold mb-2">{{ post.title }}</h3>
+                        <p class="text-gray-400 mb-2">{{ post.date }}</p>
+                        <p class="mb-4">{{ post.content[:150] }}...</p>
+                        <div class="mb-4">
+                            {% for tag in post.tags %}
+                            <a href="{{ url_for('blog', tag=tag) }}" class="inline-block bg-gray-700 text-sm px-2 py-1 rounded mr-2 mb-2">{{ tag }}</a>
+                            {% endfor %}
+                        </div>
+                        <a href="{{ url_for('blog_post', post_id=post.id) }}" class="text-blue-400 hover:text-blue-300">Read More</a>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="mt-8 flex justify-center">
+                    {% if page > 1 %}
+                    <a href="{{ url_for('blog', page=page-1, search=search_query, tag=tag_filter) }}" class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded mr-2">Previous</a>
+                    {% endif %}
+                    {% if page < total_pages %}
+                    <a href="{{ url_for('blog', page=page+1, search=search_query, tag=tag_filter) }}" class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded">Next</a>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="w-full lg:w-1/3 px-4 mt-8 lg:mt-0">
+                <div class="bg-gray-800 p-6 rounded-lg mb-8">
+                    <h3 class="text-xl font-semibold mb-4">Recent Posts</h3>
+                    <ul class="space-y-2">
+                        {% for post in recent_posts %}
+                        <li><a href="{{ url_for('blog_post', post_id=post.id) }}" class="text-blue-400 hover:text-blue-300">{{ post.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4">Tags</h3>
+                    <div>
+                        {% for tag in all_tags %}
+                        <a href="{{ url_for('blog', tag=tag) }}" class="inline-block bg-gray-700 text-sm px-2 py-1 rounded mr-2 mb-2">{{ tag }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

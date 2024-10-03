@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luis Alberto Pineda Morales - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollToPlugin.min.js"></script>
+</head>
+<body class="tech-bg">
+    <nav class="fixed top-0 left-0 right-0 bg-gray-900 bg-opacity-90 z-50">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex items-center justify-between">
+                <div class="text-xl font-semibold text-white">Luis Alberto Pineda Morales</div>
+                <div class="hidden md:flex space-x-4">
+                    <a href="#about" class="text-white hover:text-blue-300">About</a>
+                    <a href="#skills" class="text-white hover:text-blue-300">Skills</a>
+                    <a href="#github" class="text-white hover:text-blue-300">GitHub</a>
+                    <a href="#projects" class="text-white hover:text-blue-300">Projects</a>
+                    <a href="#nft" class="text-white hover:text-blue-300">Art</a>
+                    <a href="{{ url_for('blog') }}" class="text-white hover:text-blue-300">Blog</a>
+                    <a href="{{ url_for('chat') }}" class="text-white hover:text-blue-300">Chat</a>
+                    <a href="#contact" class="text-white hover:text-blue-300">Contact</a>
+                    <button id="dark-mode-toggle" class="text-white hover:text-blue-300">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    {% block content %}
+    <header id="about" class="section flex items-center justify-center min-h-screen">
+        <div class="container mx-auto px-6 text-center">
+            <img src="{{ url_for('static', filename='images/CompressJPEG.online_512x512-image (7).jpg') }}" alt="Luis Alberto Pineda Morales" class="w-32 h-32 mx-auto mb-4 rounded-full">
+            <h1 class="text-4xl font-bold mb-4">Luis Alberto Pineda Morales</h1>
+            <p class="text-xl mb-8">Cybersecurity Student | Web Developer | Software Engineer | Artist</p>
+            <div class="hero-content">
+                <p class="mb-4">Passionate software engineer and web developer with a robust background in coding and technology. Currently pursuing a cybersecurity diploma at CDI College, I'm eager to leverage my expertise in software and web development to create innovative solutions and contribute to the tech industry.</p>
+                <a href="#contact" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Get in Touch</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="skills" class="section bg-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-8 text-center">Skills & Expertise</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <a href="https://en.wikipedia.org/wiki/Web_development" target="_blank" class="skill-item bg-gray-700 p-4 rounded-lg text-center">
+                    <i class="fas fa-code text-4xl mb-2 text-blue-400"></i>
+                    <h3 class="font-semibold">Web Development</h3>
+                </a>
+                <a href="https://en.wikipedia.org/wiki/Software_engineering" target="_blank" class="skill-item bg-gray-700 p-4 rounded-lg text-center">
+                    <i class="fas fa-laptop-code text-4xl mb-2 text-green-400"></i>
+                    <h3 class="font-semibold">Software Engineering</h3>
+                </a>
+                <a href="https://en.wikipedia.org/wiki/Computer_security" target="_blank" class="skill-item bg-gray-700 p-4 rounded-lg text-center">
+                    <i class="fas fa-shield-alt text-4xl mb-2 text-red-400"></i>
+                    <h3 class="font-semibold">Cybersecurity</h3>
+                </a>
+                <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank" class="skill-item bg-gray-700 p-4 rounded-lg text-center">
+                    <i class="fab fa-python text-4xl mb-2 text-yellow-400"></i>
+                    <h3 class="font-semibold">Python</h3>
+                </a>
+                <a href="https://en.wikipedia.org/wiki/Flask_(web_framework)" target="_blank" class="skill-item bg-gray-700 p-4 rounded-lg text-center">
+                    <i class="fas fa-flask text-4xl mb-2 text-gray-400"></i>
+                    <h3 class="font-semibold">Flask</h3>
+                </a>
+                <a href="https://en.wikipedia.org/wiki/Node.js" target="_blank" class="skill-item bg-gray-700 p-4 rounded-lg text-center">
+                    <i class="fab fa-node-js text-4xl mb-2 text-green-500"></i>
+                    <h3 class="font-semibold">Node.js</h3>
+                </a>
+                <a href="https://en.wikipedia.org/wiki/JavaScript" target="_blank" class="skill-item bg-gray-700 p-4 rounded-lg text-center">
+                    <i class="fab fa-js text-4xl mb-2 text-yellow-300"></i>
+                    <h3 class="font-semibold">JavaScript</h3>
+                </a>
+                <a href="https://en.wikipedia.org/wiki/Firebase" target="_blank" class="skill-item bg-gray-700 p-4 rounded-lg text-center">
+                    <i class="fas fa-fire text-4xl mb-2 text-orange-500"></i>
+                    <h3 class="font-semibold">Firebase</h3>
+                </a>
+                <a href="https://en.wikipedia.org/wiki/Amazon_Web_Services" target="_blank" class="skill-item bg-gray-700 p-4 rounded-lg text-center">
+                    <i class="fab fa-aws text-4xl mb-2 text-yellow-500"></i>
+                    <h3 class="font-semibold">AWS</h3>
+                </a>
+                <a href="https://en.wikipedia.org/wiki/Docker_(software)" target="_blank" class="skill-item bg-gray-700 p-4 rounded-lg text-center">
+                    <i class="fab fa-docker text-4xl mb-2 text-blue-500"></i>
+                    <h3 class="font-semibold">Docker</h3>
+                </a>
+                <a href="https://en.wikipedia.org/wiki/Artificial_intelligence" target="_blank" class="skill-item bg-gray-700 p-4 rounded-lg text-center">
+                    <i class="fas fa-brain text-4xl mb-2 text-purple-400"></i>
+                    <h3 class="font-semibold">AI</h3>
+                </a>
+                <a href="https://en.wikipedia.org/wiki/Blockchain" target="_blank" class="skill-item bg-gray-700 p-4 rounded-lg text-center">
+                    <i class="fas fa-link text-4xl mb-2 text-blue-300"></i>
+                    <h3 class="font-semibold">Blockchain</h3>
+                </a>
+                <a href="https://en.wikipedia.org/wiki/Non-fungible_token" target="_blank" class="skill-item bg-gray-700 p-4 rounded-lg text-center">
+                    <i class="fas fa-palette text-4xl mb-2 text-pink-400"></i>
+                    <h3 class="font-semibold">NFT Technology</h3>
+                </a>
+                <a href="https://en.wikipedia.org/wiki/HTML5" target="_blank" class="skill-item bg-gray-700 p-4 rounded-lg text-center">
+                    <i class="fab fa-html5 text-4xl mb-2 text-orange-500"></i>
+                    <h3 class="font-semibold">HTML5</h3>
+                </a>
+                <a href="https://en.wikipedia.org/wiki/CSS" target="_blank" class="skill-item bg-gray-700 p-4 rounded-lg text-center">
+                    <i class="fab fa-css3-alt text-4xl mb-2 text-blue-400"></i>
+                    <h3 class="font-semibold">CSS3</h3>
+                </a>
+                <a href="https://en.wikipedia.org/wiki/Npm_(software)" target="_blank" class="skill-item bg-gray-700 p-4 rounded-lg text-center">
+                    <i class="fab fa-npm text-4xl mb-2 text-red-500"></i>
+                    <h3 class="font-semibold">NPM</h3>
+                </a>
+                <a href="https://en.wikipedia.org/wiki/Rust_(programming_language)" target="_blank" class="skill-item bg-gray-700 p-4 rounded-lg text-center">
+                    <i class="fas fa-cog text-4xl mb-2 text-orange-600"></i>
+                    <h3 class="font-semibold">Rust</h3>
+                </a>
+                <a href="https://en.wikipedia.org/wiki/PHP" target="_blank" class="skill-item bg-gray-700 p-4 rounded-lg text-center">
+                    <i class="fab fa-php text-4xl mb-2 text-purple-500"></i>
+                    <h3 class="font-semibold">PHP</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="github" class="section">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-8 text-center">GitHub Activity</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div class="github-stats bg-gray-800 p-4 rounded-lg text-center">
+                    <h3 class="text-xl font-semibold mb-2">Repositories</h3>
+                    <p id="repo-count" class="text-3xl font-bold">-</p>
+                </div>
+                <div class="github-stats bg-gray-800 p-4 rounded-lg text-center">
+                    <h3 class="text-xl font-semibold mb-2">Followers</h3>
+                    <p id="followers-count" class="text-3xl font-bold">-</p>
+                </div>
+                <div class="github-stats bg-gray-800 p-4 rounded-lg text-center">
+                    <h3 class="text-xl font-semibold mb-2">Following</h3>
+                    <p id="following-count" class="text-3xl font-bold">-</p>
+                </div>
+            </div>
+            <div id="github-calendar" class="bg-gray-800 p-4 rounded-lg">
+                <h3 class="text-xl font-semibold mb-4">Contribution Calendar</h3>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section reduced-margin">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-8 text-center">Projects</h2>
+            <div id="github-projects" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            </div>
+        </div>
+    </section>
+
+    <section id="nft" class="section bg-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-8 text-center">Digital Art & NFT Collections</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="nft-item">
+                    <img src="{{ url_for('static', filename='images/Screenshot 2024-10-01 052342.png') }}" alt="FMWL Collection" class="w-full h-64 object-cover rounded-lg mb-2">
+                    <h3 class="text-xl font-semibold mb-2">FMWL Collection</h3>
+                    <a href="https://opensea.io/collection/fmwl" target="_blank" class="text-blue-400 hover:text-blue-300">View Collection</a>
+                </div>
+                <div class="nft-item">
+                    <img src="{{ url_for('static', filename='images/hoodstarclub.png') }}" alt="Hoodstar Club Collection" class="w-full h-64 object-cover rounded-lg mb-2">
+                    <h3 class="text-xl font-semibold mb-2">Hoodstar Club Collection</h3>
+                    <a href="https://opensea.io/collection/hoodstarclub" target="_blank" class="text-blue-400 hover:text-blue-300">View Collection</a>
+                </div>
+                <div class="nft-item">
+                    <img src="{{ url_for('static', filename='images/hoodstarshoes.png') }}" alt="Hoodstar Shoes Collection" class="w-full h-64 object-cover rounded-lg mb-2">
+                    <h3 class="text-xl font-semibold mb-2">Hoodstar Shoes Collection</h3>
+                    <a href="https://opensea.io/collection/hoodstarshoes" target="_blank" class="text-blue-400 hover:text-blue-300">View Collection</a>
+                </div>
+                <div class="nft-item">
+                    <img src="{{ url_for('static', filename='images/wokies.png') }}" alt="Wokies Collection" class="w-full h-64 object-cover rounded-lg mb-2">
+                    <h3 class="text-xl font-semibold mb-2">Wokies Collection</h3>
+                    <a href="https://opensea.io/collection/wokies" target="_blank" class="text-blue-400 hover:text-blue-300">View Collection</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section bg-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-8 text-center">Get in Touch</h2>
+            <div class="text-center">
+                <a href="https://www.linkedin.com/in/0xluis/" target="_blank" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded inline-block">Contact Me on LinkedIn</a>
+            </div>
+        </div>
+    </section>
+    {% endblock %}
+
+    <footer class="bg-gray-900 text-white py-6">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2024 Luis Alberto Pineda Morales. All rights reserved.</p>
+            <div class="mt-4 flex justify-center space-x-4">
+                <a href="https://www.linkedin.com/in/0xluis/" target="_blank" class="text-gray-400 hover:text-white">
+                    <i class="fab fa-linkedin text-2xl"></i>
+                </a>
+                <a href="https://github.com/d3fcom" target="_blank" class="text-gray-400 hover:text-white">
+                    <i class="fab fa-github text-2xl"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

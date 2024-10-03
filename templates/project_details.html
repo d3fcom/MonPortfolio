@@ -1,0 +1,42 @@
+{% extends "index.html" %}
+
+{% block content %}
+<section id="project-details" class="section pt-20">
+    <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-8 text-center">{{ project.name }}</h2>
+        <div class="bg-gray-800 p-6 rounded-lg mb-8">
+            <p class="mb-4">{{ project.description }}</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <p><strong>Language:</strong> {{ project.language }}</p>
+                    <p><strong>Stars:</strong> {{ project.stargazers_count }}</p>
+                    <p><strong>Forks:</strong> {{ project.forks_count }}</p>
+                </div>
+                <div>
+                    <p><strong>Created:</strong> {{ project.created_at }}</p>
+                    <p><strong>Last Updated:</strong> {{ project.updated_at }}</p>
+                    <p><strong>Open Issues:</strong> {{ project.open_issues_count }}</p>
+                </div>
+            </div>
+            <div class="mt-4">
+                <a href="{{ project.html_url }}" target="_blank" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">View on GitHub</a>
+            </div>
+        </div>
+
+        <div class="bg-gray-800 p-6 rounded-lg mb-8">
+            <h3 class="text-2xl font-bold mb-4">README</h3>
+            <div id="readme-content" class="prose prose-invert">
+                {{ readme_html|safe }}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-python.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-javascript.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-css.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-markup.min.js"></script>
+{% endblock %}
